@@ -12,18 +12,7 @@ namespace FooBarQixKata
             [5] = "Bar",
             [7] = "Qix"
         };
-
-        public IDictionary<int, string> GetDico()
-        {
-            return _rules;
-        }
         
-        public string Get(int value)
-        {
-            return _rules[value];
-        }
-
-
         public string EvalFooBrQix(int number)
         {
             var numberString = number.ToString();
@@ -39,7 +28,7 @@ namespace FooBarQixKata
         private string BuildResultByDivider(int number)
         {
             var result = string.Empty;
-            foreach (var val in GetDico())
+            foreach (var val in _rules)
             {
                 if (number % val.Key == 0)
                     result += val.Value;
@@ -49,9 +38,16 @@ namespace FooBarQixKata
         private string BuildResultByContains(int number)
         {
             var result = string.Empty;
-            if (GetDico().ContainsKey(number))
+            if (_rules.ContainsKey(number))
                 result += Get(number);
             return result;
+        }
+
+
+
+        private string Get(int value)
+        {
+            return _rules[value];
         }
     }
 }

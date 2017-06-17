@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FooBarQix.cs" />
     <Compile Include="FooBarQixManager.cs" />
     <Compile Include="FooBarQixTests.cs" />
+    <Compile Include="IFooBarQixManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
